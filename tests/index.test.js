@@ -5,7 +5,6 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-
 const request = supertest(server)
 
 beforeAll((done) => {
@@ -71,7 +70,17 @@ describe("Testing endpoints", () => {
 
     })
 
-    // it("should test that when adding one product with INVALID data we are receiving an error")
+    const invalidProduct = {
+        price: 899
+    }
+
+    it("should test that when adding one product with INVALID data we are receiving an error", async () => {
+        const response = await request.post('/products').send(invalidProduct)
+
+        expect(response.status).toBe(400)
+        expect(response.body.message).toBe('INVALID_PRODUCT')
+
+    })
 
 })
 
