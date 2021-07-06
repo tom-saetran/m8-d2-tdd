@@ -11,6 +11,7 @@ testRouter.get("/", (req, res) => res.status(200).send({ text: "Test success" })
 
 server.use("/test", testRouter)
 server.use("/test2", testRouter)
+server.use("/test3", testRouter)
 server.use("/products", productsRouter)
 
 export default server
