@@ -82,5 +82,9 @@ describe("Testing endpoints", () => {
 
     })
 
+    it("should test again that true is true", () => {
+        expect(true).toBe(true)
+    })
+
 })
 
