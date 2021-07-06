@@ -21,6 +21,4 @@ server.use('/test', testRouter)
 server.use('/products', productsRouter)
 
 
-
-
 export default server
