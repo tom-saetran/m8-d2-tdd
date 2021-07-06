@@ -1,6 +1,10 @@
 import supertest from "supertest"
 import server from "../src/server.js"
 import mongoose from "mongoose"
+import dotenv from "dotenv"
+
+process.env.NODE_ENV !== "production" && dotenv.config()
+
 
 const request = supertest(server)
 

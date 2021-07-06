@@ -3,9 +3,10 @@ import express from "express"
 import productsRouter from "./services/products/index.js"
 
 // if (process.env.NODE_ENV !== "production") {
-dotenv.config()
+//     dotenv.config()
 // }
-console.log(process.env.NODE_ENV)
+
+// console.log(process.env.NODE_ENV)
 
 const server = new express()
 
