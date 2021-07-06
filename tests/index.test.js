@@ -1,6 +1,10 @@
 import supertest from "supertest"
 import server from "../src/server.js"
 import mongoose from "mongoose"
+import dotenv from "dotenv"
+
+dotenv.config()
+
 
 const request = supertest(server)
 

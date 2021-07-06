@@ -1,11 +1,5 @@
-import dotenv from "dotenv"
 import express from "express"
 import productsRouter from "./services/products/index.js"
-
-// if (process.env.NODE_ENV !== "production") {
-dotenv.config()
-// }
-console.log(process.env.NODE_ENV)
 
 const server = new express()
 
@@ -19,8 +13,6 @@ testRouter.get('/', (req, res) => {
 
 server.use('/test', testRouter)
 server.use('/products', productsRouter)
-
-
 
 
 export default server
