@@ -22,7 +22,15 @@ productsRouter.get('/:id', async (req, res) => {
 })
 
 productsRouter.post('/', async (req, res) => {
-    const newProduct = new ProductModel(req.body)
+
+    const { price, name } = req.body
+    if (!price || !name) {
+        res.status(400).send({ message: "INVALID_PRODUCT" })
+        return
+    }
+
+    const newProduct = new ProductModel({ price, name })
+
     await newProduct.save()
 
     res.status(201).send(newProduct)
